@@ -12,10 +12,15 @@ import javax.validation.Valid;
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.PATCH;
 import javax.ws.rs.PUT;
+import javax.inject.Inject;
+import org.eclipse.microprofile.jwt.JsonWebToken;
 
 @Path("/hello")
 @ApplicationScoped
 public class GreetingResource {
+
+    @Inject
+    JsonWebToken jwt;
 
     @POST
     @Path("/insecure")
